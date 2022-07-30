@@ -14,9 +14,6 @@ export default function Nav() {
   return (
     <NavStyles>
     	<Link href='/products/1'>Products</Link>
-    	{
-    		user && (
-		    	<>
 		    		<Link href='/sell'>Sell</Link>
 		    		<Link href='/orders'>Orders</Link>
 		    		<Link href='/account'>Account</Link>
@@ -24,17 +21,7 @@ export default function Nav() {
                     <button type="button" onClick={openCart}>My Cart<CartCount 
                         count={calcTotalCartItems(user?.cart)}/>
                     </button>
-		    	</>
-    			)
-    		}
-
-    	{
-    		!user && (
-		    	<>
 		    		<Link href='/signin'>Sign In</Link>
-		    	</>
-    			)
-    		}
     </NavStyles>
   );
 }
